@@ -7,9 +7,10 @@ testCreateNoteList();
 
 function testStoreNote() {
   var noteList = new NoteList()
-  noteList.store("Favourite drink: seltzer")
+  var note = new Note("Favourite drink: seltzer")
+  noteList.store(note)
   console.log(noteList.notes)
-  assert.isTrue(noteList.notes[0] === "Favourite drink: seltzer", 'stored note in list');
+  assert.isTrue(noteList.list()[0] === "Favourite drink: seltzer", 'stored note in list');
 };
 
 testStoreNote();
