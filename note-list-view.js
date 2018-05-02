@@ -5,7 +5,7 @@
   };
 
   NoteListView.prototype.display = function () {
-     return "<ul><li><div>"+(this.noteList.notes.join("</div></li><li><div>"))+"</div></li></ul>";
+     return "<ul><li><div>"+(this.noteList.notes.map(note => note.slice(0, 20)).join("</div></li><li><div>"))+"</div></li></ul>";
    };
 
   exports.NoteListView = NoteListView;

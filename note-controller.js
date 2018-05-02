@@ -1,7 +1,7 @@
 (function(exports){
 
   function NoteController(list = new NoteList){
-    note = new Note("Favourite drink: seltzer")
+    note = new Note("Favourite drink")
     this.list = list
     list.store(note)
 
