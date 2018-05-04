@@ -1,7 +1,7 @@
 function noteListViewTests(){
   var list = new NoteList();
-  var note1 = new Note("hello");
-  var note2 = new Note("goodbye all");
+  var note1 = Note.create("hello");
+  var note2 = Note.create("goodbye all");
   list.store(note1);
   list.store(note2);
   var view = new NoteListView(list)
@@ -13,7 +13,7 @@ noteListViewTests();
 
 function lessThan20Char(){
   var list = new NoteList();
-  var note = new Note("Favourite drink: seltzer")
+  var note = Note.create("Favourite drink: seltzer")
   list.store(note);
   var view = new NoteListView(list)
   assert.isTrue(view.display() === "<ul><li><div>Favourite drink: sel</div></li></ul>" , "this note is 20 char or less ")

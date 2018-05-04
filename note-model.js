@@ -1,9 +1,20 @@
-(function(exports){
-  function Note(text){
-    this.text = text;
+(function(exports) {
+  function NoteBuilder() {
+    var id = 0
+    this.create = function(text) {
+      return new Note(id++, text)
+    };
   };
-  Note.prototype.read = function(){
+
+  function Note(id, text) {
+    this.text = text;
+    this.id = id;
+  };
+
+  Note.prototype.read = function() {
     return this.text;
-  }
-  exports.Note = Note;
+  };
+
+  exports.Note = new NoteBuilder()
+
 })(this);

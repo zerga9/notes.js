@@ -1,10 +1,13 @@
-(function(exports){
-  function NoteList(){
+(function(exports) {
+  function NoteList() {
     this.notes = []
   };
-  NoteList.prototype.store = function(note){
-    this.notes.push(note.text);
+
+  NoteList.prototype.store = function(note) {
+
+    this.notes.push(note);
   };
+
   NoteList.prototype.list = function() {
     return this.notes
   };
